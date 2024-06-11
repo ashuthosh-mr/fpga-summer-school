@@ -1,0 +1,10 @@
+import siliconcompiler
+the_design = siliconcompiler.Chip('pesu_demo')
+the_design.load_target('skywater130_demo')
+print(f'Loaded target design kit: skywater130_demo')
+the_design.input('examples/nand2/dut.v')
+the_design.clock('clk', period=10)
+the_design.set('option','remote', True)
+the_design.run()
+the_design.summary()
+the_design.show()
