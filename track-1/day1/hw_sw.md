@@ -51,9 +51,13 @@ style: |
   - [Cryptography](#cryptography)
 
 ---
+![bg left w:450 h:400](./images/lut.png)
+
 # FPGA
 
 ---
+
+
 # CPU
 
 ---
@@ -131,6 +135,24 @@ over the next few slides, lets see how customizing hardware gives us a tiny edge
 
 ---
 
-# Understanding MicroBlaze V
+# MicroBlaze V
+![bg left w:450 h:400](./images/microblaze.png)
+
+- Enables easy hardware migration for existing MicroBlaze processor designs and software portability for RISC-V designs
+Configurable ISA support for RV32IMAFC Base Integer Instruction Set with optional:
+
+---
+
+# MicroBlaze V
+
+- Configurable ISA support for `RV32IMAFC` Base Integer Instruction Set with optional:
+
+  - Multiplication and division ("M" extension)
+  - Atomic instructions (`A` extension)
+  - Floating-point (`F` extension)
+  - Code compression (`C` extension)
+  - Bit manipulation (`Zba`, `Zbb`, `Zbc`, `Zbs` extensions)
+
+- Utilizes code compression to significantly reduce code size and save design memory
 
 ---
