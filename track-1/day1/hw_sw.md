@@ -42,17 +42,58 @@ style: |
   }
 ---
 # Index
+- [FPGA](#fpga)
+- [CPU](#cpu)
 - [Applications over the years](#applications-over-the-years)
-- [FPGA Intro](#fpga)
+- FPGA Intro
   - [ANN](#ann)
   - [Genome sequence](#genome-sequencing)
   - [Cryptography](#cryptography)
 
 ---
-# FPGA vs CPU 
-
+# FPGA
 
 ---
+# CPU
+
+---
+# A case study
+
+## HW
+So let us take a `add` as an example
+
+```verilog
+//full adder using data-flow modeling
+module full_adder_d (
+    input a,b,cin,
+    output sum,carry
+);
+
+assign sum = a^b^cin;
+assign carry = (a & b)|(b & cin)|(cin & a);
+
+endmodule
+```
+
+---
+
+![bg right w:450 h:400](./images/riscv_pipeline.svg)
+
+## HW + SW
+> riscv `add` takes two operand R1 and R2 and stores result in R3.
+
+```asm
+ld t3, 0x100
+ld t2, 0x200
+add t1, t3, t2
+```
+
+1) Load value to t3
+2) Load value to t2
+3) add the value and store it in t1
+
+---
+
 # Applications over the years
 over the next few slides, lets see how customizing hardware gives us a tiny edge over a full software approach or a full hardware approach, with some couple of study.
 
@@ -82,14 +123,14 @@ over the next few slides, lets see how customizing hardware gives us a tiny edge
 [3][effectively-hiding-sensitive-data-with-risc-v-zk-and-custom-instructions](https://codasip.com/2024/01/31/effectively-hiding-sensitive-data-with-risc-v-zk-and-custom-instructions/)
 
 ---
+
 # In a nutshell
 
 * sw alone on a traditional architecture(base) lot of cycles so we might want to tweak the hardware a bit.
 * Sometimes it is better to build specific hardware which can reduce cycle at a cost (area, power etc..)
 
-
 ---
 
-# A case study
+# Understanding MicroBlaze V
 
-So let us take a `add` as an example
+---
