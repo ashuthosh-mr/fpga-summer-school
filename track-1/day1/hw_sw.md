@@ -57,6 +57,10 @@ style: |
 
 ---
 
+# FPGA Flow
+
+
+---
 
 # CPU
 
@@ -130,8 +134,8 @@ over the next few slides, lets see how customizing hardware gives us a tiny edge
 
 # In a nutshell
 
-* sw alone on a traditional architecture(base) lot of cycles so we might want to tweak the hardware a bit.
-* Sometimes it is better to build specific hardware which can reduce cycle at a cost (area, power etc..)
+* `sw` alone on a traditional architecture(base) lot of cycles so we might want to tweak the hardware a bit.
+* Sometimes it is better to build specific hardware which can reduce cycle at a cost (`area`, `power` etc..)
 
 ---
 
@@ -139,7 +143,7 @@ over the next few slides, lets see how customizing hardware gives us a tiny edge
 ![bg left w:450 h:400](./images/microblaze.png)
 
 - Enables easy hardware migration for existing MicroBlaze processor designs and software portability for RISC-V designs
-Configurable ISA support for RV32IMAFC Base Integer Instruction Set with optional:
+
 
 ---
 
@@ -154,5 +158,3 @@ Configurable ISA support for RV32IMAFC Base Integer Instruction Set with optiona
   - Bit manipulation (`Zba`, `Zbb`, `Zbc`, `Zbs` extensions)
 
 - Utilizes code compression to significantly reduce code size and save design memory
-
----
